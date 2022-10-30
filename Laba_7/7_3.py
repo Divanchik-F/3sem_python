@@ -10,14 +10,6 @@ class Nucleotide:
     def list_to_str(cls, _lst):
         return cls("".join(_lst))
 
-    @classmethod
-    def ret_class(cls, _str):
-        return cls(_str)
-
-    @classmethod
-    def get_class_name(cls):
-        return type(cls).__name__
-
     def __mul__(self, sec_num):
         if len(self.str) < len(sec_num.str):
             min_len = len(self.str)
@@ -31,7 +23,7 @@ class Nucleotide:
         return self.list_to_str(new_str[:min_len])
 
     def __add__(self, sec_num):
-        return self.ret_class(self.str + sec_num.str)
+        return self(self.str + sec_num.str)
 
     def __eq__(self, sec_num):
         if self.str == sec_num.str:
@@ -65,7 +57,7 @@ class RNA(Nucleotide):
         return self.str
 
     def __repr__(self):
-        return f"{self.get_class_name()(str = {self.str})}"
+        return f"{type(self).__name__} (str = {self.str})"
     
 class DNA(RNA):
     possible_elem = ['A', 'T', 'G', 'C']
@@ -92,4 +84,4 @@ class DNA(RNA):
         return f"({self.str}, {self.sec_str})"
 
     def __repr__(self):
-        return f"{self.get_class_name()}(str = {self.str}, sec_str = {self.sec_str})"
+        return f"{type(cls).__name__} (str = {self.str}, sec_str = {self.sec_str})"
