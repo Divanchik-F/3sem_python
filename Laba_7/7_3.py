@@ -40,7 +40,7 @@ class Nucleotide:
             return False
 
 class RNA(Nucleotide):
-    possible_elem = ['A', 'U', 'G', 'C', 'T']
+    possible_elem = ['A', 'U', 'G', 'C']
     elem_transform = {
         'A': 'T',
         'U': 'A',
