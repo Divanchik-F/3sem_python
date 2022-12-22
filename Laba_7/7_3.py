@@ -75,7 +75,7 @@ class DNA(RNA):
 
     def __getitem__(self, i):
         elem = super().__getitem__(i)
-        sec_elem = self.elem_transform[elem]
+        sec_elem = self.sec_str[i]
         return elem, sec_elem
 
     def __str__(self):
