@@ -1,5 +1,3 @@
-from importlib.util import set_loader
-from pickle import TRUE
 from random import choice
 
 class Nucleotide:
