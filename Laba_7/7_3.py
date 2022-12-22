@@ -84,4 +84,4 @@ class DNA(RNA):
         return f"({self.str}, {self.sec_str})"
 
     def __repr__(self):
-        return f"{type(cls).__name__} (str = {self.str}, sec_str = {self.sec_str})"
+        return f"{type(self).__name__} (str = {self.str}, sec_str = {self.sec_str})"
